@@ -1,0 +1,24 @@
+#header
+{
+	height:70px;
+	width:100%;
+	background-color:#099;
+	border-color:#009;
+	margin-top:-12px;
+}
+#header img
+{
+	height:45px;
+	width:80px;
+	float:left;
+	padding-left:35px;
+}
+#header p
+{
+	font-size:18px;
+	font-family:Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+}
+.note p
+{
+	color:#CCC;
+}
