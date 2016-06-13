@@ -1,75 +1,393 @@
 <!DOCTYPE html>
-  <html>
-    <head>
-      <!--Import Google Icon Font-->
-      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css -->
-      <link type="text/css" rel="stylesheet" href="media/materializecss/css/materialize.min.css"  media="screen,projection"/>
-      <link href="media/my/css/cssfile.css" type="text/css" rel="stylesheet">
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
+<html>
+<head>
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css -->
+    <link type="text/css" rel="stylesheet" href="media/materializecss/css/materialize.min.css"  media="screen,projection"/>
 
-    <body>
-   <!-- <div id="header">
-    <img src="media/my/images/icon_256x256.png">
-    <h5 class="center-align" style="font-family:Cambria, 'Hoefler Text', 'Liberation Serif', Times, 'Times New Roman', serif"> CONVERTERS</h5>
-    <p class="left-align"> CONVERT ME </p>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+<div style="border:solid ; border-width: 5px 0px 5px 0px ;border-color: #8b1014;">
+<nav>
+    <div class="nav-wrapper">
+        <a href="" class="brand-logo"> CONVERT ME . . .  </a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+        </ul>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>-->
-    <div id="select-mat">
-     <div class="input-field col s12">
-    <select>
-      <option value="" disabled selected>Choose your option</option>
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
-    </select>
-    <label>Materialize Select</label>
-  </div>
-    <br>
+</nav>
+</div>
+<div class="container">
     <div class="row">
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s6">
-          <input placeholder="number" id="input_num" type="number" class="validate">
-          <label for="input_num" style="font-size:18px; color:#FFF">For the Number</label>
+        <div class="col s12">
+            <ul class="tabs">
+                <li class="tab col s3"><a class="active" href="#length">Length</a></li>
+                <li class="tab col s3"><a  href="#area">Area</a></li>
+                <li class="tab col s3"><a  href="#volume">Volume</a></li>
+                <li class="tab col s3"><a  href="#mass">Mass</a></li>
+                <li class="tab col s3"><a  href="#temperature">Temperature</a></li>
+            </ul>
         </div>
-        </div>
-        </form>
-        </div>
-        <div id="select-mat">
-            <div class="input-field col s12">
-                <select>
-                    <option value="" disabled selected>Choose your option</option>
-                    <option value="1">Option 1</option>
-                    <option value="2">Option 2</option>
-                    <option value="3">Option 3</option>
-                </select>
-                <label>Materialize Select</label>
+        <div id="length" class="col s12"> <div class="row">
+            <div class="col s12 m9 l8 offset-l2">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-title">Length Conversion</div>
+                        <div class="row">
+                            <div class="input-field col l12">
+                                <input id="l_input_value"  type="text" class="validate">
+                                <label for="l_input_value">Enter Data to convert</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 m12 l12">
+                                <label>From</label>
+                                <select class="browser-default" id="l_select_from">
+                                    <option value="" disabled selected>Choose your Conversion</option>
+                                    <option value="inch">Inches - milimeters</option>
+                                    <option value="feet">Feet - Meters</option>
+                                    <option value="yard">Yards - Meters</option>
+                                    <option value="mile">Miles - Kilometers </option>
+                                </select>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <blockquote>
+                                <h1 id="l_output_data">0.0</h1>
+                            </blockquote>
+                        </div>
+                    </div>
+                    <div class="card-action">
+                        <a class="btn tooltipped" onclick="length_conversion()" data-position="bottom" data-delay="50" data-tooltip="Conversion will happen through this">Convert</a>
+                    </div>
+                </div>
             </div>
-    <div class="note">
-    <p class="center-align">Use decimal numbers only not fraction,</p> 
+        </div></div>
+        <div id="area" class="col s12">
+            <div class="col s12 m9 l8 offset-l2">
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-title">Area Conversion</div>
+                    <div class="row">
+                        <div class="input-field col l12">
+                            <input id="a_input_value" type="text" class="validate">
+                            <label for="a_input_value">Enter Data to convert</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 m12 l12">
+                            <label>From</label>
+                            <select class="browser-default" id="a_select_from">
+                                <option value="" disabled selected>Choose your conversion</option>
+                                <option value="s_inch">square Inches - square Milimeters</option>
+                                <option value="s_feet">square Feet - square Meters</option>
+                                <option value="s_yard">square Yards - square Meters </option>
+                                <option value="acres">Acres - Hectares </option>
+                                <option value="s_mile">square Mile - square Kilometers </option>
+                            </select>
+                        </div>
+
+
+                    </div>
+                    <div class="row">
+                        <blockquote>
+                            <h1 id="a_output_data">0.0</h1>
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="card-action">
+                    <a class="btn tooltipped" onclick="area_conversion()" data-position="bottom" data-delay="50" data-tooltip="Conversion will happen through this">Convert</a>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div id="volume" class="col s12">
+            <div class="col s12 m9 l8 offset-l2">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-title">Volume Conversion</div>
+                        <div class="row">
+                            <div class="input-field col l12">
+                                <input id="v_input_value" type="text" class="validate">
+                                <label for="v_input_value">Enter Data to convert</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 m12 l12">
+                                <label>From</label>
+                                <select class="browser-default" id="v_select_from">
+                                    <option value="" disabled selected>Choose your Conversion</option>
+                                    <option value="fluid ounces ">fluid ounces - milliliters</option>
+                                    <option value="gallons">gallons - liters</option>
+                                    <option value="cubic feet">cubic feet - cubic meters </option>
+                                    <option value="cubic yards ">cubic yards - cubic meters </option>
+                                </select>
+                            </div>
+
+
+                        </div>
+                        <div class="row">
+                            <blockquote>
+                                <h1 id="v_output_data">0.0</h1>
+                            </blockquote>
+                        </div>
+                    </div>
+                    <div class="card-action">
+                        <a class="btn tooltipped" onclick="volume_conversion()" data-position="bottom" data-delay="50" data-tooltip="Conversion will happen through this">Convert</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="mass" class="col s12">
+            <div class="col s12 m9 l8 offset-l2">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-title">Mass Conversion</div>
+                        <div class="row">
+                            <div class="input-field col l12">
+                                <input id="m_input_value" type="text" class="validate">
+                                <label for="m_input_value">Enter Data to convert</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 m12 l12">
+                                <label>From</label>
+                                <select class="browser-default" id="m_select_from">
+                                    <option value="" disabled selected>Choose your Conversion</option>
+                                    <option value="Ounces">Ounces - grams</option>
+                                    <option value="Pounds">Pounds - kilograms</option>
+                                    <option value="short tons">short tons (2000 lb) - mega grams (or "metric ton") </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <blockquote>
+                                <h1 id="m_output_data">0.0</h1>
+                            </blockquote>
+                        </div>
+                    </div>
+                    <div class="card-action">
+                        <a class="btn tooltipped" onclick="mass_conversion()" data-position="bottom" data-delay="50" data-tooltip="Conversion will happen through this">Convert</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="temperature" class="col s12">
+            <div class="col s12 m9 l8 offset-l2">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-title">Temperature Conversion</div>
+                        <div class="row">
+                            <div class="t_input-field col l12">
+                                <input id="t_input_value" type="text" class="validate">
+                                <label for="t_input_value">Enter Data to convert</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 m12 l12">
+                                <label>From</label>
+                                <select class="browser-default" id="t_select_from">
+                                    <option value="" disabled selected>Choose your Conversion</option>
+                                    <option value="Fahrenheit">Fahrenheit _ Celsius</option>
+                                    <option value="Celsius">Celsius - Fahrenheit</option>
+                                </select>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <blockquote>
+                                <h1 id="t_output_data">0.0</h1>
+                            </blockquote>
+                        </div>
+                    </div>
+                    <div class="card-action">
+                        <a class="btn tooltipped" onclick="temprature_conversion()" data-position="bottom" data-delay="50" data-tooltip="Conversion will happen through this">Convert</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div>
-    <p class="center-align">
-    Number of decimal places in answer: <input name="decimals" value="0" size="3">
-	</p>
+</div>
+<footer class="page-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">Metric conversion</h5>
+                <p class="grey-text text-lighten-4">we provide you best tools to convert data you can easily convert your data.</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Follow us</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="#!">twitter</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">youtube</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!"> Facebook</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">instagram</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
-        <div class="center-align">
-        <a class="waves-effect waves-light btn" onclick="convert()"><i class="material-icons right" >import_export</i>convert Now</a>
+    <div class="footer-copyright">
+        <div class="container">
+            Copyright reserved 2016 (Aptech muslim town)
         </div>
-        <br>
-        <div class="center-align">
-        <a class="waves-effect waves-light btn"><i class="material-icons right">done_all</i>Reset</a>
-        </div>
-      <!--Import jQuery before materialize.js-->
-      <script src="media/my/js/jsfile.js" type="text/javascript"> </script>
-      <script type="text/javascript" src="media/jquery-2.1.1.min.js"></script>
-      <script type="text/javascript" src="media/materializecss/js/materialize.min.js"></script>
-    </body>
-  </html>
+    </div>
+</footer>
+
+<script src="media/jquery-2.1.1.min.js"></script>
+<script src="media/materializecss/js/materialize.min.js"></script>
+<script>
+    function length_conversion() {
+        /* Get Input data from the input field to convert */
+        conv_input_value=parseInt(document.getElementById("l_input_value").value);
+
+        /*
+         get the select from conversion
+         */
+        sel_conv_from=document.getElementById("l_select_from");
+        conv_from=sel_conv_from.options[sel_conv_from.selectedIndex].value;
+
+
+        switch(conv_from){
+            case "inch":
+                document.getElementById("l_output_data").innerText=(Math.round(conv_input_value*25.4*100)/100) + " mm";
+                break;
+            case "feet":
+                document.getElementById("l_output_data").innerText=(Math.round((conv_input_value*0.3048)*100)/100) + " meter";
+                break;
+            case "yard":
+                document.getElementById("l_output_data").innerText=(Math.round((conv_input_value*0.9144)*100)/100) + " meter";
+                break;
+            case "mile":
+                document.getElementById("l_output_data").innerText=(Math.round((conv_input_value*1.60934)*100)/100) + " km";
+                break;
+            default:
+                var $toastContent = $('<h5>Invalid Selection</h5>');
+                Materialize.toast($toastContent, 5000,"rounded");
+        }
+
+    }
+
+    function area_conversion() {
+        /* Get Input data from the input field to convert */
+        conv_input_value = parseInt(document.getElementById("a_input_value").value);
+
+        /*
+         get the select from conversion
+         */
+        sel_conv_from = document.getElementById("a_select_from");
+        conv_from = sel_conv_from.options[sel_conv_from.selectedIndex].value;
+
+
+        switch (conv_from) {
+            case "s_inch":
+                document.getElementById("a_output_data").innerText = (Math.round((conv_input_value * 645.16) * 100) / 100) + " mm";
+                break;
+            case "feet":
+                document.getElementById("a_output_data").innerText = (Math.round((conv_input_value * 0.092903) * 100) / 100) + " meter";
+                break;
+            case "yard":
+                document.getElementById("a_output_data").innerText = (Math.round((conv_input_value * 0.836127) * 100) / 100) + " meter";
+                break;
+            case "acres":
+                document.getElementById("a_output_data").innerText = (Math.round((conv_input_value * 0.404686) * 100) / 100) + " meter";
+                break;
+            case "mile":
+                document.getElementById("a_output_data").innerText = (Math.round((conv_input_value * 2.58) * 100) / 100) + " km";
+                break;
+            default:
+                var $toastContent = $('<h5>Invalid Selection</h5>');
+                Materialize.toast($toastContent, 5000, "rounded");
+        }
+    }
+    function volume_conversion() {
+        /* Get Input data from the input field to convert */
+        conv_input_value = parseInt(document.getElementById("v_input_value").value);
+
+        /*
+         get the select from conversion
+         */
+        sel_conv_from = document.getElementById("v_select_from");
+        conv_from = sel_conv_from.options[sel_conv_from.selectedIndex].value;
+
+
+        switch (conv_from) {
+            case "fluid ounces":
+                document.getElementById("v_output_data").innerText = (Math.round((conv_input_value * 29.5735) * 100) / 100) + " mm";
+                break;
+            case "gallons":
+                document.getElementById("v_output_data").innerText = (Math.round((conv_input_value * 3.78541) * 100) / 100) + " liters";
+                break;
+            case "cubic feet":
+                document.getElementById("v_output_data").innerText = (Math.round((conv_input_value * 0.0283168) * 100) / 100) + " cubic meters";
+                break;
+            case "cubic yards":
+                document.getElementById("v_output_data").innerText = (Math.round((conv_input_value * 0.764555) * 100) / 100) + " cubic meters";
+                break;
+            default:
+                var $toastContent = $('<h5>Invalid Selection</h5>');
+                Materialize.toast($toastContent, 5000, "rounded");
+        }
+
+
+    }
+
+    function mass_conversion() {
+        /* Get Input data from the input field to convert */
+        conv_input_value = parseInt(document.getElementById("m_input_value").value);
+
+        /*
+         get the select from conversion
+         */
+        sel_conv_from = document.getElementById("m_select_from");
+        conv_from = sel_conv_from.options[sel_conv_from.selectedIndex].value;
+
+
+        switch (conv_from) {
+            case "Ounces":
+                document.getElementById("m_output_data").innerText = (Math.round((conv_input_value * 28.3495) * 100) / 100) + " grams";
+                break;
+            case "Pounds":
+                document.getElementById("m_output_data").innerText = (Math.round((conv_input_value * 0.453592) * 100) / 100) + " kilograms";
+                break;
+            case "short tons (2000 lb)":
+                document.getElementById("m_output_data").innerText = (Math.round((conv_input_value * 0.90718) * 100) / 100) + " mega grams";
+                break;
+            default:
+                var $toastContent = $('<h5>Invalid Selection</h5>');
+                Materialize.toast($toastContent, 5000, "rounded");
+        }
+
+    }
+
+    function temprature_conversion() {
+        /* Get Input data from the input field to convert */
+        conv_input_value = parseInt(document.getElementById("t_input_value").value);
+
+        /*
+         get the select from conversion
+         */
+        sel_conv_from = document.getElementById("t_select_from");
+        conv_from = sel_conv_from.options[sel_conv_from.selectedIndex].value;
+
+
+        switch (conv_from) {
+            case "Fahrenheit":
+                document.getElementById("t_output_data").innerText = (Math.round((conv_input_value * -17.2222) * 100) / 100) + " Celsius";
+                break;
+            case "Celsius":
+                document.getElementById("t_output_data").innerText = (Math.round((conv_input_value * 33.8) * 100) / 100) + " Fahrenheit";
+                break;
+            default:
+                var $toastContent = $('<h5>Invalid Selection</h5>');
+                Materialize.toast($toastContent, 5000, "rounded");
+        }
+
+    }
+            
+</script>
+</body>
+</html>
